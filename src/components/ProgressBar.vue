@@ -1,15 +1,30 @@
 <template>
   <div class="progress-bar">
-    <span> 100% </span>
-    <div class="progress-percent"></div>
+    <span> {{ percetage }}% </span>
+    <div class="progress-percent" :style="{width: percetage + '%'}"></div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    tasks: Array,
+  },
+  data() {
+    return { counting: 0 };
+  },
+  computed: {
+    percetage() {
+      const length = this.tasks.length;
+      if(length === 0) return 0
+      const test = this.tasks.filter(task => task.done === true).length;
+      return Math.round((test / length) * 100);
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
 span {
   position: absolute;
   top: 10%;
@@ -23,14 +38,13 @@ span {
   border: 1px solid #fff;
   border-radius: 5px;
   overflow: hidden;
-  height: 30px;
+  min-height: 30px;
 }
 .progress-percent {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* width: 0%; */
   background: #26de81;
 }
 </style>

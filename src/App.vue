@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
-    <ProgressBar />
-    <NewTask />
-    <Tasks />
+      <ProgressBar :tasks="tasks" />
+      <NewTask :tasks="tasks" @addTask="tasks = $event" />
+    <Tasks :tasks="tasks" @updateTask="tasks = $event" />
   </div>
 </template>
 
@@ -36,7 +36,6 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
 }
