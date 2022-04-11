@@ -25,7 +25,9 @@ export default {
   },
   methods: {
     remove(id) {
-      this.tasks = this.tasks.filter((task) => task.id !== id);
+      const deletedTask = this.tasks.filter((task) => task.id !== id);
+      this.$emit("updateTask", [...deletedTask]);
+
     },
     setStatus(id) {
       this.tasks.forEach((task) => {

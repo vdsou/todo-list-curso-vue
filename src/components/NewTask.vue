@@ -26,10 +26,13 @@ export default {
       this.task.id = id;
       this.task.text = this.text;
       this.task.done = false;
-      this.tasks.push(this.task);
+      let checkTask = this.tasks.filter((task) => task.text === this.text);
+      if(this.text === "") checkTask = 0;
+      if (checkTask.length === 0) {
+        this.tasks.push(this.task);
+      }
       this.task = {};
       this.text = "";
-
       this.$emit("addTask", this.tasks);
     },
   },

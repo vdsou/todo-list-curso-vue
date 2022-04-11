@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
-      <ProgressBar :tasks="tasks" />
-      <NewTask :tasks="tasks" @addTask="tasks = $event" />
+    <ProgressBar :tasks="tasks" />
+    <NewTask :tasks="tasks" @addTask="tasks = $event" />
     <Tasks :tasks="tasks" @updateTask="tasks = $event" />
   </div>
 </template>
@@ -18,6 +18,20 @@ export default {
     return {
       tasks: [],
     };
+  },
+  watch: {
+    tasks() {
+      localStorage.setItem("tasks", JSON.stringify(this.tasks));
+    },
+  },
+  created() {
+    const tasks = localStorage.getItem("tasks");
+    if (tasks) {
+      this.tasks = JSON.parse(tasks);
+    }
+  },
+  updated() {
+    localStorage.setItem("tasks", JSON.stringify(this.tasks));
   },
 };
 </script>
