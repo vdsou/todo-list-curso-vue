@@ -44,7 +44,7 @@ export default {
   margin: 20px 0;
   border: 1px solid #fff;
   display: flex;
-  width: 600px;
+  width: 50%;
 }
 input {
   opacity: 0.9;
@@ -65,7 +65,7 @@ input {
 button {
   font-size: 18px;
   cursor: pointer;
-  width: 13%;
+  width: 10%;
   border: none;
   height: 100%;
   background: #a5b1c2;

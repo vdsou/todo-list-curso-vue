@@ -5,9 +5,14 @@
         <h3 class="text">
           {{ task.text }}
         </h3>
+        <button title="Excluir" class="remove-task" @click="remove(task.id)">
+          <i class="fa-solid fa-trash"></i>
+        </button>
         <div class="buttons">
-          <button @click="remove(task.id)">Remover</button>
-          <button @click="setStatus(task.id)">Feita</button>
+          <button title="Marcar como feita" @click="setStatus(task.id)">
+            Feita
+            <i class="fa-solid fa-check check"></i>
+          </button>
         </div>
       </li>
     </ul>
@@ -70,19 +75,21 @@ export default {
 .tasks ul li {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
-  background: #eb3b5a;
+  background: linear-gradient(to right, #fc5c65, #eb3b5a);
+  /* background: #eb3b5a; */
   height: 150px;
   width: 250px;
   margin: 5px;
-  padding: 5px;
+  padding: 15px;
   border-radius: 5px;
   transform: scale(0.99);
 }
 .tasks ul li.done {
-  background: #2d98da;
+  /* background: #2d98da; */
+  background: linear-gradient(to right, #4b7bec, #4b7bec);
 }
 .tasks ul li .text {
   word-wrap: break-word;
@@ -93,6 +100,9 @@ export default {
 }
 .tasks ul li.done .text {
   text-decoration: line-through;
+}
+.tasks ul li.done .check {
+  color: #20bf6b;
 }
 .tasks ul li:hover,
 .tasks ul li.done:hover {
@@ -115,5 +125,22 @@ export default {
 }
 .tasks button:hover {
   color: #2d98da;
+}
+.tasks .remove-task {
+  position: absolute;
+  padding: 1px;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 13px;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+}
+.tasks .remove-task:hover {
+  color: #fc5c65;
 }
 </style>
