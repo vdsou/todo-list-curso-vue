@@ -79,7 +79,6 @@ export default {
   align-items: center;
   list-style: none;
   background: linear-gradient(to right, #fc5c65, #eb3b5a);
-  /* background: #eb3b5a; */
   height: 150px;
   width: 250px;
   margin: 5px;
@@ -88,7 +87,6 @@ export default {
   transform: scale(0.99);
 }
 .tasks ul li.done {
-  /* background: #2d98da; */
   background: linear-gradient(to right, #4b7bec, #4b7bec);
 }
 .tasks ul li .text {
@@ -97,6 +95,7 @@ export default {
   text-align: center;
   padding: 0 10px;
   overflow-y: auto;
+  margin-bottom: 15px;
 }
 .tasks ul li.done .text {
   text-decoration: line-through;
@@ -129,8 +128,8 @@ export default {
 .tasks .remove-task {
   position: absolute;
   padding: 1px;
-  top: -5px;
-  right: -5px;
+  top: -7px;
+  right: -7px;
   display: flex;
   justify-content: center;
   align-items: center;
