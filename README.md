@@ -1,4 +1,10 @@
-# todo
+# Todo list
+Explored topics
+- Props
+- Emits
+- Vue CLI
+- Components
+- Directves
 
 ## Project setup
 ```
