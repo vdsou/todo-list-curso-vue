@@ -27,7 +27,6 @@ export default {
     remove(id) {
       const deletedTask = this.tasks.filter((task) => task.id !== id);
       this.$emit("updateTask", [...deletedTask]);
-
     },
     setStatus(id) {
       this.tasks.forEach((task) => {
@@ -54,14 +53,18 @@ export default {
 
 <style scoped>
 .tasks {
+  display: flex;
   justify-content: center;
   width: 100%;
+  padding: 15px;
 }
 .tasks ul {
-  margin: 10px auto;
-  width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 80%;
   height: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .tasks ul li {
@@ -73,19 +76,27 @@ export default {
   background: #eb3b5a;
   height: 150px;
   width: 250px;
-  margin: 15px;
+  margin: 5px;
+  padding: 5px;
   border-radius: 5px;
-  transition: all ease 200ms;
+  transform: scale(0.99);
 }
 .tasks ul li.done {
   background: #2d98da;
+}
+.tasks ul li .text {
+  word-wrap: break-word;
+  width: 100%;
+  text-align: center;
+  padding: 0 10px;
+  overflow-y: auto;
 }
 .tasks ul li.done .text {
   text-decoration: line-through;
 }
 .tasks ul li:hover,
 .tasks ul li.done:hover {
-  transform: scale(1.01);
+  transform: scale(1);
 }
 .tasks .buttons {
   width: 100%;
@@ -96,15 +107,13 @@ export default {
   cursor: pointer;
   padding: 5px 10px;
   color: #4b6584;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   border: none;
   border-radius: 5px;
   background: #d1d8e0;
-  transition: ease all 200ms;
 }
 .tasks button:hover {
-  /* background: #4b6584; */
   color: #2d98da;
 }
 </style>

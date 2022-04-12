@@ -39,6 +39,7 @@ export default {
 <style>
 * {
   box-sizing: border-box;
+  transition: all ease 200ms;
 }
 body {
   font-family: "Lato", sans-serif;
@@ -55,8 +56,8 @@ body {
 }
 
 #app h1 {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 </style>

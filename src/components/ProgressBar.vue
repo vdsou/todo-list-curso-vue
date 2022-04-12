@@ -27,8 +27,8 @@ export default {
 <style scoped>
 span {
   position: absolute;
-  top: 10%;
-  left: 49%;
+  top: 25%;
+  left: 50%;
   font-size: 18px;
   font-weight: 600;
 }
@@ -38,7 +38,7 @@ span {
   border: 1px solid #fff;
   border-radius: 5px;
   overflow: hidden;
-  min-height: 30px;
+  min-height: 45px;
 }
 .progress-percent {
   display: flex;
